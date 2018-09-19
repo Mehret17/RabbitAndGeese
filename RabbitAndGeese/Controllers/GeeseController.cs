@@ -8,7 +8,7 @@ using RabbitAndGeese.Models;
 
 namespace RabbitAndGeese.Controllers
 {
-    [Route("api/[geese]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class GeeseController : ControllerBase
     {

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RabbitAndGeese.Controllers
 {
-    [Route("api/[geese]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
