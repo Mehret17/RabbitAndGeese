@@ -13,32 +13,33 @@ namespace RabbitAndGeese.Controllers
     public class GeeseController : ControllerBase
     {
         // Field
-        static List<Goose> Geese; 
+        static List<Goose> Geese;
 
-        // constructor
-        static GeeseController() // added static keyworkd
+        // constructor method
+        static GeeseController()
         {
             Geese = new List<Goose>
             {
                 new Goose {Name = "Gerald", Sex = Sex.Male, Social = false},
                 new Goose {Name = "Stewart", Sex = Sex.Male, Social = false},
-                new Goose {Name = "Bartholomew", Sex = Sex.Male, Social = false},
+                new Goose {Name = "Bartholomew", Sex = Sex.Male, Social = true},
                 new Goose {Name = "Bartamaeus", Sex = Sex.Male, Social = false},
-                new Goose {Name = "Stephanie", Sex = Sex.Female, Social = false},
-                new Goose {Name = "Gucifer", Sex = Sex.Female, Social = false},
+                new Goose {Name = "Stephanie", Sex = Sex.Female, Social = true},
+                new Goose {Name = "Gucifer", Sex = Sex.Female, Social = true},
             };
         }
-        // method
+
         [HttpGet]
         public ActionResult<IEnumerable<Goose>> GetAll()
         {
             return Geese;
         }
 
-        [HttpGet ("cool")]
-        public ActionResult<IEnumerable<Goose>> GetCoolMaleGeese ()
+        [HttpGet("cool")]
+        public ActionResult<IEnumerable<Goose>> GetCoolMaleGeese()
         {
             var coolGeese = Geese.Where(goose => goose.Sex == Sex.Male && goose.Social);
+
             return Ok(coolGeese);
         }
 
@@ -49,6 +50,7 @@ namespace RabbitAndGeese.Controllers
             return Ok();
         }
 
-    }
 
+
+    }
 }
